@@ -15,7 +15,7 @@ class HomePage extends React.Component {
         return (
             <div>
                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                    <a class="navbar-brand" href="#">Pro Fanatics</a>
+                    <a class="navbar-brand" href="#"><i class="fas fa-trophy"></i> Pro Fanatics</a>
                 </nav>
                 <h1>Testing for connection to backend</h1>
                 <h2>Check console in dev tools</h2>
