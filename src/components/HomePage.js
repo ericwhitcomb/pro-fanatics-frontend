@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import image from '../images/herm_edwards.jpg';
+import SignInModal from './authentication/SignInModal';
 
 class HomePage extends React.Component {
 
@@ -29,7 +30,7 @@ class HomePage extends React.Component {
                                         <p class="lead">A goal without a plan is a wish.</p>
                                         <p>Herm Edwards</p>
                                         <p class="lead">
-                                            <a class="btn btn-primary btn-lg" href="#" role="button">Sign In</a>
+                                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Sign In</button>
                                         </p>
                                     </div>
                                     <div class="col-6">
@@ -40,6 +41,7 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                 </div>
+                <SignInModal />
             </div>
         );
     }
