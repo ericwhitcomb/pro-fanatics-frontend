@@ -2,8 +2,16 @@ import React from 'react';
 import axios from 'axios';
 import image from '../images/herm_edwards.jpg';
 import SignInModal from './authentication/SignInModal';
+import { Navbar, Nav, Form, FormControl, Button, Modal, Container, Row, Col, Jumbotron, Image } from 'react-bootstrap';
 
 class HomePage extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            showModal: false
+        }
+    }
 
     componentDidMount() {
         axios.get('/api')
@@ -15,35 +23,46 @@ class HomePage extends React.Component {
 
     render() {
         return (
-            <div>
-                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                    <a class="navbar-brand" href="#"><i class="fas fa-trophy"></i> Pro Fanatics</a>
-                </nav>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="jumbotron">
-                                <div class="row">
-                                    <div class="col-6 text-center">
-                                        <h1 class="display-3">Pro Fanatics</h1>
-                                        <hr class="my-4" />
-                                        <p class="lead">A goal without a plan is a wish.</p>
+            <>
+                {/* <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <a class="navbar-brand" href="/"><i class="fas fa-trophy"></i> Pro Fanatics</a>
+                </nav> */}
+                <Navbar variant="dark" expand="lg" bg="primary">
+                    <Navbar.Brand href="/"><i class="fas fa-trophy"></i> Pro Fanatics</Navbar.Brand>
+                </Navbar>
+                <Container>
+                    <Row>
+                        <Col xs="12">
+                            <Jumbotron>
+                                <Row>
+                                    <Col md="6" className="text-center">
+                                        <h1 className="display-3">Pro Fanatics</h1>
+                                        <hr className="my-4" />
+                                        <p className="lead">A goal without a plan is a wish.</p>
                                         <p>Herm Edwards</p>
-                                        <p class="lead">
-                                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Sign In</button>
+                                        <p className="lead">
+                                            <Button variant="primary" onClick={this.showModal}>Sign In</Button>
                                         </p>
-                                    </div>
-                                    <div class="col-6">
-                                        <img src={image} class="img-fluid" alt="Herm Edwards" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <SignInModal />
-            </div>
+                                    </Col>
+                                    <Col md="6">
+                                        <Image src={image} rounded fluid />
+                                    </Col>
+                                </Row>
+                            </Jumbotron>
+                        </Col>
+                    </Row>
+                </Container>
+                <SignInModal show={this.state.showModal} onHide={this.hideModal} />
+            </>
         );
+    }
+
+    showModal = () => {
+        this.setState({ showModal: true });
+    }
+
+    hideModal = () => {
+        this.setState({ showModal: false })
     }
 }
 
