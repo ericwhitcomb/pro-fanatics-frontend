@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import image from '../images/herm_edwards.jpg';
-import SignInModal from './authentication/SignInModal';
-import { Navbar, Nav, Form, FormControl, Button, Modal, Container, Row, Col, Jumbotron, Image } from 'react-bootstrap';
+import image from '../../images/herm_edwards.jpg';
+import SignInModal from '../authentication/SignInModal';
+import { Button, Col, Container, Image, Jumbotron, Navbar, Row } from 'react-bootstrap';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -24,9 +24,6 @@ class HomePage extends React.Component {
     render() {
         return (
             <>
-                {/* <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                    <a class="navbar-brand" href="/"><i class="fas fa-trophy"></i> Pro Fanatics</a>
-                </nav> */}
                 <Navbar variant="dark" expand="lg" bg="primary">
                     <Navbar.Brand href="/"><i class="fas fa-trophy"></i> Pro Fanatics</Navbar.Brand>
                 </Navbar>
