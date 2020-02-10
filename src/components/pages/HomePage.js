@@ -14,7 +14,7 @@ class HomePage extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/api')
+        axios.get('/')
             .then(response => {
                 console.log(response);
             })
@@ -49,7 +49,7 @@ class HomePage extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-                <SignInModal show={this.state.showModal} onHide={this.hideModal} />
+                <SignInModal show={this.state.showModal} onHide={this.hideModal} setToken={this.props.setToken} />
             </>
         );
     }
