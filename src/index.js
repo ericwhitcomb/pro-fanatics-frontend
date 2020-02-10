@@ -12,7 +12,7 @@ dotenv.config();
 axios.defaults.baseURL =
   process.env.NODE_ENV === 'production'
     ? process.env.BACKEND_URL
-    : 'http://localhost:4000';
+    : 'http://localhost:4000/api';
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 
