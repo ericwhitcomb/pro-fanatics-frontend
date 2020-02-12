@@ -9,10 +9,14 @@ import * as serviceWorker from './serviceWorker';
 
 dotenv.config();
 
+console.log('index.js:' + process.env.NODE_ENV);
+
 axios.defaults.baseURL =
   process.env.NODE_ENV === 'production'
     ? process.env.BACKEND_URL
     : 'http://localhost:4000/api';
+
+console.log('index.js:' + axios.defaults.baseURL);
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 
