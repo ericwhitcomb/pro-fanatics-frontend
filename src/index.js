@@ -10,10 +10,7 @@ dotenv.config();
 
 console.log('index.js:' + process.env.NODE_ENV);
 
-axios.defaults.baseURL =
-  process.env.NODE_ENV === 'production'
-    ? process.env.BACKEND_URL
-    : 'http://localhost:4000/api';
+axios.defaults.baseURL = process.env.BACKEND_URL;
 
 console.log('index.js:' + axios.defaults.baseURL);
 
