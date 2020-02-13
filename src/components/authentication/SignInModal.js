@@ -37,7 +37,7 @@ class SignInModal extends React.Component {
                                 <Form.Control required type="password" name="password" defaultValue={this.state.password} onChange={this.inputHandler} ref={this.passwordInput} />
                             </Col>
                         </Form.Group>
-                        <p class="text-danger text-center">{this.state.message}</p>
+                        <p className="text-danger text-center">{this.state.message}</p>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button type="submit" variant="primary" size="lg" block>Sign In</Button>
