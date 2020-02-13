@@ -10,7 +10,9 @@ dotenv.config();
 
 console.log('index.js:' + process.env.NODE_ENV);
 
-axios.defaults.baseURL = process.env.BACKEND_URL;
+console.log('index.js:' + process.env.REACT_APP_BACKEND_URL);
+
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
 console.log('index.js:' + axios.defaults.baseURL);
 
