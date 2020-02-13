@@ -5,7 +5,6 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
 dotenv.config();
 
