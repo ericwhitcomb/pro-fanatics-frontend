@@ -58,7 +58,6 @@ class SignInModal extends React.Component {
 
     submitHandler = event => {
         event.preventDefault();
-        console.log('submitHandler');
 
         const { email, password } = this.state;
 
@@ -78,20 +77,14 @@ class SignInModal extends React.Component {
             axios
                 .post(endpoint, credentials)
                 .then(res => {
-                    console.log('submitHandler then');
                     localStorage.setItem('jwt', res.data.token);
-                    console.log('submitHandler then a');
                     this.props.setToken(res.data.token);
-                    console.log('submitHandler then b');
                 })
                 .catch(err => {
-                    console.log('submitHandler catch');
                     this.setState({
                         message: 'Email or Password is incorrect'
                     });
-                    console.log('submitHandler catch a');
                     this.emailInput.current.focus();
-                    console.log('submitHandler catch b');
                 });
         }
     };
