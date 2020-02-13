@@ -5,16 +5,16 @@ const Authenticate = Component => {
     return class WrappedComponent extends React.Component {
 
         state = {
-            loggedIn: false,
+            loggedIn: localStorage.getItem('jwt') ? true : false,
         }
 
-        componentWillMount() {
-            if (!localStorage.getItem('jwt')) {
-                this.setState({ loggedIn: false });
-            } else {
-                this.setState({ loggedIn: true });
-            }
-        }
+        // componentWillMount() {
+        //     if (!localStorage.getItem('jwt')) {
+        //         this.setState({ loggedIn: false });
+        //     } else {
+        //         this.setState({ loggedIn: true });
+        //     }
+        // }
 
         render() {
             return !this.state.loggedIn ? <Redirect to="/" /> : <Component />;
