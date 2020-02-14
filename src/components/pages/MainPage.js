@@ -1,7 +1,8 @@
 import React from 'react';
 import Authenticate from '../authentication/Authenticate';
 import ProtectedNavbar from '../navbars/ProtectedNavbar';
-import { Col, Container, Row } from 'react-bootstrap';
+import PlayerTable from '../tables/PlayerTable';
+import { Container, Row } from 'react-bootstrap';
 
 class MainPage extends React.Component {
     render() {
@@ -10,9 +11,7 @@ class MainPage extends React.Component {
                 <ProtectedNavbar />
                 <Container>
                     <Row>
-                        <Col xs="12">
-                            <h2 className="text-center">We can begin</h2>
-                        </Col>
+                        <PlayerTable />
                     </Row>
                 </Container>
             </>
