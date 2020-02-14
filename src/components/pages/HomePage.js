@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import image from '../../images/herm_edwards.jpg';
 import SignInModal from '../authentication/SignInModal';
-import { Button, Col, Container, Image, Jumbotron, Navbar, Row } from 'react-bootstrap';
+import PublicNavbar from '../navbars/PublicNavbar';
+import { Button, Col, Container, Image, Jumbotron, Row } from 'react-bootstrap';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -24,9 +25,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <>
-                <Navbar variant="dark" expand="lg" bg="primary">
-                    <Navbar.Brand href="/"><i className="fas fa-trophy"></i> Pro Fanatics</Navbar.Brand>
-                </Navbar>
+                <PublicNavbar />
                 <Container>
                     <Row>
                         <Col xs="12">
