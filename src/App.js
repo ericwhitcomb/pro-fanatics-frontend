@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import 'bootswatch/dist/sandstone/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
+import "react-datepicker/dist/react-datepicker.css";
 import './App.css';
 import HomePage from './components/pages/HomePage';
 import MainPage from './components/pages/MainPage';
