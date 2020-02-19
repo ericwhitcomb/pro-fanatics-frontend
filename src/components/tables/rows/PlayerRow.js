@@ -1,16 +1,18 @@
 import React from 'react';
+import moment from 'moment';
 
 class PlayerRow extends React.Component {
     render() {
         return (
-            <tr onClick={this.editHandler}>
-                <td>Xxxxxxxxx, Xxxxxx</td>
-                <td className="text-center">XX</td>
-                <td className="text-center">0-00</td>
-                <td className="text-center">000</td>
-                <td className="text-center">00</td>
-                <td className="text-center">00/00/0000</td>
-                <td>Xxxxxxxxxxxx</td>
+            <tr key={this.key} onClick={this.editHandler}>
+                <td>{this.props.player.lastName}, {this.props.player.firstName}</td>
+                <td className="text-center">{this.props.player.position}</td>
+                <td className="text-center">{this.props.player.height}</td>
+                <td className="text-center">{this.props.player.weight}</td>
+                <td className="text-center">{moment().diff(moment(this.props.player.birthDate), 'years')}</td>
+                <td className="text-center">{moment(this.props.player.birthDate).format("MM/DD/YYYY")}</td>
+                <td className="text-center">{this.props.player.class}{this.props.player.redshirt ? '*' : ''}</td>
+                <td>{this.props.player.college}</td>
                 <td className="text-center">
                     <span className="text-danger" onClick={this.deleteHandler}><i className="fas fa-times-circle"></i></span>
                 </td>
@@ -24,7 +26,7 @@ class PlayerRow extends React.Component {
     }
 
     editHandler = event => {
-        console.log('editHandler');
+        this.props.showModal(this.props.player);
     }
 }
 

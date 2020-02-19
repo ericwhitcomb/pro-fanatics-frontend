@@ -13,8 +13,8 @@ class SignInModal extends React.Component {
             message: ''
         };
 
-        this.emailInput = React.createRef();
-        this.passwordInput = React.createRef();
+        this.inputEmail = React.createRef();
+        this.inputPassword = React.createRef();
     }
 
     render() {
@@ -25,16 +25,16 @@ class SignInModal extends React.Component {
                 </Modal.Header>
                 <Form onSubmit={this.submitHandler}>
                     <Modal.Body>
-                        <Form.Group as={Row} controlId="emailInput">
+                        <Form.Group as={Row} controlId="email">
                             <Form.Label column sm={2}>Email</Form.Label>
                             <Col sm={10}>
-                                <Form.Control required type="email" name="email" defaultValue={this.state.email} onChange={this.inputHandler} ref={this.emailInput} />
+                                <Form.Control required type="email" name="email" defaultValue={this.state.email} onChange={this.inputHandler} ref={this.inputEmail} />
                             </Col>
                         </Form.Group>
-                        <Form.Group as={Row} controlId="passwordInput">
+                        <Form.Group as={Row} controlId="password">
                             <Form.Label column sm={2}>Password</Form.Label>
                             <Col sm={10}>
-                                <Form.Control required type="password" name="password" defaultValue={this.state.password} onChange={this.inputHandler} ref={this.passwordInput} />
+                                <Form.Control required type="password" name="password" defaultValue={this.state.password} onChange={this.inputHandler} ref={this.inputPassword} />
                             </Col>
                         </Form.Group>
                         <p className="text-danger text-center">{this.state.message}</p>
@@ -65,12 +65,12 @@ class SignInModal extends React.Component {
             this.setState({
                 message: 'Email cannot be empty'
             });
-            this.emailInput.current.focus();
+            this.inputEmail.current.focus();
         } else if (!password) {
             this.setState({
                 message: 'Password cannot be empty'
             });
-            this.passwordInput.current.focus();
+            this.inputPassword.current.focus();
         } else {
             const endpoint = '/auth/login';
             const credentials = { email, password };
@@ -84,13 +84,13 @@ class SignInModal extends React.Component {
                     this.setState({
                         message: 'Email or Password is incorrect'
                     });
-                    this.emailInput.current.focus();
+                    this.inputEmail.current.focus();
                 });
         }
     };
 
     onShow = event => {
-        this.emailInput.current.focus();
+        this.inputEmail.current.focus();
     };
 }
 
